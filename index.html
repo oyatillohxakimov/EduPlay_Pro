@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EduPlay — o'rganish, mashq qilish va o'ynash platformasi." />
+  <title>EduPlay — O'rganish qiziqarli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="onboarding" class="modal-backdrop" aria-modal="true" role="dialog">
+    <div class="welcome-modal">
+      <button class="modal-close" id="skipOnboarding" aria-label="Oynani yopish">×</button>
+      <div class="welcome-icon">✦</div>
+      <p class="eyebrow">EduPlay'ga xush kelibsiz</p>
+      <h1>Bilim olishni <span>o'yinga</span> aylantiramiz!</h1>
+      <p class="welcome-copy">Qiziqishlaringizni tanlang. Biz sizga mos darslar, o'yinlar va kunlik maqsadni tayyorlaymiz.</p>
+      <div class="step-dots"><i class="active"></i><i></i><i></i></div>
+      <section class="setup-step active-step" data-step="1">
+        <h2>Qaysi fanlar sizga yoqadi?</h2>
+        <p class="muted">Kamida bitta fanni tanlang</p>
+        <div class="choice-grid" id="subjectChoices">
+          <button class="choice selected" data-subject="Informatika"><span>⌘</span>Informatika</button>
+          <button class="choice" data-subject="Ingliz tili"><span>文</span>Ingliz tili</button>
+          <button class="choice" data-subject="Matematika"><span>∑</span>Matematika</button>
+          <button class="choice" data-subject="Fizika"><span>⚡</span>Fizika</button>
+        </div>
+        <button class="wide-button" id="startLearning">O'rganishni boshlash <b>→</b></button>
+      </section>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home"><span class="brand-mark">✦</span><span>Edu<span>Play</span></span></a>
+      <nav class="desktop-nav">
+        <a class="active" href="#home">Bosh sahifa</a><a href="#subjects">Fanlar</a><a href="#games">O'yinlar</a><a href="#progress">Progress</a>
+      </nav>
+      <div class="top-actions"><button class="icon-button" id="themeToggle" aria-label="Rang rejimi">☼</button><button class="avatar">A</button></div>
+    </header>
+
+    <main id="home">
+      <section class="hero-section">
+        <div class="hero-copy"><p class="eyebrow">Bugungi sarguzasht</p><h1>Har kuni bir qadam.<br /><span>Har darsda yangi kuch.</span></h1><p>O'rganing, mashq qiling va o'yin orqali bilimlaringizni mustahkamlang.</p><div class="hero-actions"><a class="primary-button" href="#subjects">Darsni davom ettirish <b>→</b></a><a class="text-button" href="#games">O'yinlarni ko'rish</a></div></div>
+        <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-card art-main"><span class="art-icon">⌘</span><strong>Algoritmlar</strong><small>Informatika · 3-dars</small><div class="mini-progress"><i></i></div><small>65% tugallandi</small></div><div class="floating-card xp-card"><span>✦</span><strong>+120 XP</strong><small>Bugungi natija</small></div><div class="floating-card streak-card"><span>♨</span><strong>7 kun</strong><small>Streak davom etmoqda</small></div></div>
+      </section>
+
+      <section class="stats-row"><div><span class="stat-symbol purple">✦</span><span><b>1,260</b><small>Umumiy XP</small></span></div><div><span class="stat-symbol orange">♨</span><span><b>7 kun</b><small>Ketma-ketlik</small></span></div><div><span class="stat-symbol blue">◎</span><span><b>Level 8</b><small>Keyingi level: 240 XP</small></span></div><div><span class="stat-symbol green">✓</span><span><b>68%</b><small>Umumiy progress</small></span></div></section>
+
+      <section class="section-block" id="subjects"><div class="section-heading"><div><p class="eyebrow">Siz uchun tanlangan</p><h2>Fanlar</h2></div><a href="#subjects">Barchasini ko'rish →</a></div><div class="subject-cards" id="subjectCards"></div></section>
+
+      <section class="section-block" id="games"><div class="section-heading"><div><p class="eyebrow">Bilimni mustahkamla</p><h2>O'yinlar maydoni</h2></div><span class="pill">6 xil o'yin</span></div><div class="game-grid"><button class="game-card purple-card" data-game="crossword"><span class="game-emoji">▦</span><strong>Krossvord</strong><small>Osondan murakkabgacha</small><b>O'ynash →</b></button><button class="game-card orange-card" data-game="match"><span class="game-emoji">◈</span><strong>Juftini top</strong><small>Tushunchalarni moslashtir</small><b>O'ynash →</b></button><button class="game-card blue-card" data-game="truefalse"><span class="game-emoji">✓?</span><strong>To'g'ri yoki noto'g'ri</strong><small>Tezkor bilim sinovi</small><b>O'ynash →</b></button><button class="game-card green-card" data-game="scramble"><span class="game-emoji">Aa</span><strong>So'zlar labirinti</strong><small>Inglizcha so'zlarni top</small><b>O'ynash →</b></button></div></section>
+
+      <section class="learning-panel" id="progress"><div><p class="eyebrow">Keyingi qadam</p><h2>Learning Path</h2><p>O'zingizga mos yo'l bo'yicha bilimlarni bosqichma-bosqich egallang.</p><div class="path"><span class="done">✓</span><span class="line done-line"></span><span class="current">2</span><span class="line"></span><span>3</span><span class="line"></span><span>4</span></div><small>Kompyuter asoslari <b>→</b> Algoritm <b>→</b> O'zgaruvchilar <b>→</b> If / Else</small></div><a href="#subjects" class="primary-button">Yo'lni davom ettirish →</a></section>
+    </main>
+
+    <nav class="mobile-nav"><a class="active" href="#home">⌂<small>Bosh sahifa</small></a><a href="#subjects">▤<small>Fanlar</small></a><a href="#games">◈<small>O'yinlar</small></a><a href="#progress">◔<small>Progress</small></a><a href="#home">◉<small>Profil</small></a></nav>
+  </div>
+
+  <div class="game-modal" id="gameModal" aria-hidden="true"><div class="game-dialog"><button class="modal-close" id="closeGame">×</button><p class="eyebrow">EduPlay o'yini</p><h2 id="gameTitle">O'yin</h2><div id="gameContent"></div><button class="wide-button" id="nextGame">Tekshirish</button></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
